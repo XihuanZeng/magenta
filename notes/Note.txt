@@ -1,4 +1,0 @@
-Start with molody_rnn_generate:
-
-args:
-  primer_melody: if provided as a list, then the melody will start from it, we have a Melody class that takes a python list to init

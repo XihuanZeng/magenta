@@ -1,0 +1,31 @@
+init with FLAGS
+- config: one of 'basic_rnn', 'lookback_rnn', or 'attention_rnn'
+- bundle_file: run_dir or checkpoint_file of model
+- outdir:
+- num_outputs:
+- num_steps: each step is a 16th of a bar
+- primer_melody: list of a melody to start with. [60] will start this melody with middle C
+- primer_midi: same as above, only one of the two should be set
+- save_generator_bundle: If true, instead of generating a sequence, will save this generator as a 
+    			 bundle file in the location
+- qpm: quarters per minutes, default 120
+- temperature
+- beam_size
+- branch_factor
+
+When use the executable file, we are using the main function, which will call 'run_with_args' if args is present
+
+functions
+- get_bundle: this get a generator_pb2.GeneratorBundle if bundle_file is passed through arg
+- main
+	- if bundle, then all args read from bundle, else read from args
+	- generator is set to be the melody_rnn_sequence-generator.MelodyRnnSequenceGenerator(model=MelodyModel(config),...)
+	- if save_generator_bundle == True, no song generated, just save the generator as a bundle file.
+	- else will call the run_with_flag function to generate
+- run_with_flag: 
+	- input_sequence is first init if primer_melody or premier_midi, else start with [60]
+	- generated_sequence = generator.generate(input_sequence, generator_options) does all the trick
+
+
+
+

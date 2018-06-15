@@ -1,0 +1,15 @@
+Melody is a class that inherit from the SimpleEventSequence.
+
+- need a list "event" and all other **kwargs in SimpleEventSequence to init.
+- support several utility functions
+	- get_note_histogram: note that the event can have only 12 values(from C to B including black keys), here C8 and C7 will merge to one bin
+	- get_major_key: find major key that this music most probably have, logic is to find most freq note(C7, C8 both count as C)
+	- from_quantized_sequence: init this class with a NoteSequence
+	- to_sequence: convert self to a NoteSequence protobuf
+	- transpose: transpose #half_steps to the origin melodies
+	- squash: 
+	- increase_resolution:
+	- midi_file_to_melody: loads melody from a MIDI file
+	- extract_melodies: search through for monophonic melodies in every track at every time step
+	
+ 
