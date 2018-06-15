@@ -1,0 +1,17 @@
+class EventSequence and SimpleEventSequence:
+abstract class use as interface for music event sequences
+1. EventSequence: only has start_step and end_step and steps
+2. SimpleEventSequence: add functionality on the interface of EventSequence and again serve as interface 
+- this class serve as an iterable object
+- takes 5 values to init, they are 
+	-pad_event(default value for padding)
+	-events: list of event
+	-start_step: offset number of steps
+	-steps_per_bar: Number of steps in a bar(measure) of music
+	-steps_per_quarter: Number of steps in in a quarter note.
+
+
+
+Known class that implement SimpleEventSequence:
+1. Melody
+2. ChordProgession
